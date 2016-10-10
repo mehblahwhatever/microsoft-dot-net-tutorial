@@ -154,4 +154,157 @@
 	* Logic errors
 * Visual Studio provides powerful tools to help you in your debugging process
 
+## Variables
 
+* Computer programs manage information
+* Variables are a way to store information
+* Variables exist in memory
+* Created at the start of programs or as needed
+* Variables have three components
+	* Data type
+	* Name
+	* Value
+
+## Naming Variables
+
+* Variable names must
+	* Begin with an alphabetic character or underscore
+	* Contain only alphabetic characters, numbers, and underscores
+	* Contain at least one alphabetic character or number if they begin with an underscore
+	* Be less than 1023 characters
+* Variable names should be descriptive and of reasonable length
+	* ```A = B + 7```
+	* ```EmployeeSalaryAfterRaise = EmployeeSalaryBeforeRaise * 1.05```
+	* ```New Salary = CurrentSalary * 1.05```
+
+## Declaring Variables
+
+* To declare a variable and allocate storage space for it in memory, first specify the data type and then specify the variable's name
+
+```cs
+int counter1;
+int counter2 = 612;
+
+string message1, message2, message3;
+message2 = "";
+message3 = "Hello";
+```
+
+## Variable Lifetime and Scope
+
+* Variable's lifetime is length of time it is available
+	* Variable declared in a method will be in memory while method is running
+* Variable's scope determines what code can reference it
+	* Variable declared in a method will be available only to that method
+	* Declare a variable at the class level for it to be available to multiple methods
+
+## Data Types
+
+* All information has a type
+* Type defines how information will be stored, used, manipulated, and displayed
+* .NET Framework contains structures and classes that represent various types of data
+* All data types in Visual Basic and C# are based on a .NET Framework structure or class
+
+## Integer Data Types
+
+* sbyte - based on System.SByte
+	* Signed 8-bit integer between -128 and 127
+* byte - based on System.Byte
+	* 8-bit integer between 0 and 255
+* short - based on System.Int16
+	* 16-bit integer between -32,768 and 32,767
+* ushort - based on System.Int16
+	* 16-bit unsigned integer between 0 and 65,535
+* int - based on System.Int32
+	* 32-bit integer between -2,147,483,648 and 2,147,483,647
+* uint - based on System.Int32
+	* 32-bit unsigned integer betwen 0 and 4,294,967,295
+* long - based on System.Int64
+	* 64-bit integer between -9,223,372,036,854,775,808 and 9,223,372,036,854,775,807
+* ulong - based on System.Int64
+	* 64-bit unsigned integer between 0 and 18,446,744,073,709,551,615
+
+## Choosing an Integer Data Type
+
+* Choose a data type that is appropriate for the data you will store
+* Balance memory requirement and performance
+	* **int** requires twice as much storage space (4 bytes) than **short** (2 bytes)
+	* **int** and **long** are more efficient than **Byte** or **short** because .NET Framework represents numbers as 32-bit or 64-bit values
+* Use **int** unless you have valide concerns about memory usage
+
+## Data Types Fields and Methods
+
+* **MinValue** and **MaxValue** represent low and high end of range of values
+* **ToString** returns strign representation of value
+	* Specify format to control how string is displayed
+
+## Floating-Point Data Types
+
+* float - based on System.Single
+	* 32-bit single-precision floating point number between -3.402823E38 and -1.401298E-45 for negative values and 1.401298E-45 and 3.402823E38 for positive values
+* double - based on System.Double
+	* 64-bit double-precision floating point number between -1.79769313486231570E308 and -4.94065645841246544E-324 for negative values and between 4.94065645841246544E-324 and 1.79769313486231570E308 for positive values
+* Use **double** unless you have valide concerns about memory usage
+
+## Decimal Data Type
+
+* Based on System.Decimal
+	* 128-bit number between -79,228,162,514,264,337,593,543,950,335 and 79,228,162,514,264,337,593,543,950,335 with no decimal places and between -7.9228162514264337593543950335 and 7.9228162514264337593543950335 with up to 28 decimal places
+* Holds numbers of lesser magnitude than floating points but with greater precision
+* Use when you need the utmost in precision, especially for financial calculations
+
+## Decimal Data Type Fields and Methods
+
+* **Truncate** returns integer parts and discards fractional part
+* **Round** rounds to nearest integer or to a specified number of decimal places
+* **Floor** rounds to integer smaller than or equal to the value
+* **Ceiling** rounds to integer greater than or equal to the value
+
+## Char Data Type
+
+* Based on System.Char
+	* 16-bit numberic value between 0 to 65535
+* Holds code points, or character codes, representing a single Unicode character
+	* The first 128 code points, numbers 0 through 127, are the ASCII character set
+
+## Char Data Type Methods
+
+* **ConvertFromUtf32** returns Unicode character associated with code point
+* **ConvertToUtf32** returns code point associated with Unicode character
+* **IsControl** indicates if a tab, carriage return or line feed
+* **IsDigit** indicates if a decimal digit
+* **IsLetter** indicates if an alphabetic letter
+* **IsLetterOrDigit** indicates if a letter or digit
+* **IsLower** inidicates if a lower case letter
+* **IsNumber** indicates if a number
+* **IsPunctuation** indicates if a punctuation mark
+* **IsSeparator** inidicates if a separator, such as a space
+* **IsUpper** indicates if an upper case letter
+* **IsWhitespace** indicates if whitespace
+
+## String Data Type
+
+* Based on System.String
+	* Represents a series of 0 to 2 billion characters
+* Use escape sequence ```\``` or preface the string with ```@``` to include quotation marks and backslashes in strings
+	* ```string greeting1 = "Hello \" Robert\"";```
+	* ```string greeting2 = @"Hello ""Robert""";```
+
+## Bool Data Type
+
+* Based on System.Boolean
+	* 0 (True) or 1 (False)
+* Used to test conditions
+
+```cs
+if (firstVariable > secondVariable) {
+	Console.WriteLine("{0} is greater than {1}", firstVariable, secondVariable);
+}
+```
+
+Object Data Type
+
+* Based on System.Object
+* Can contain any data type, including another object
+* Use **GetType** to determine what type of data is stored
+* Contains a pointer to the value in memory, not actual data
