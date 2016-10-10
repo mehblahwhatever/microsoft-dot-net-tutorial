@@ -131,3 +131,15 @@
 	* Web application
 	* XML Web Service
 
+## Working with Profile Settings
+
+* User profiles allow you to control Visual Studio behavior
+* Can use pre-set defaults for:
+	* Options
+	* Menus
+	* Key bindings
+	* Toolbars
+* Pick profile when you first run Visual Studio
+	* Or change it any time
+* Demonstration saves and restores profile
+
