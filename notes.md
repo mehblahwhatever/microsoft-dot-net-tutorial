@@ -143,3 +143,15 @@
 	* Or change it any time
 * Demonstration saves and restores profile
 
+## Debugging and Handling Exceptions
+
+* No matter how carefully you code
+	* You'll make coding errors
+	* Errors will occur at runtime
+* Three types of errors:
+	* Syntax errors
+	* Runtime errors
+	* Logic errors
+* Visual Studio provides powerful tools to help you in your debugging process
+
+
