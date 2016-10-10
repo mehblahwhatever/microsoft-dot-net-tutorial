@@ -308,3 +308,124 @@ Object Data Type
 * Can contain any data type, including another object
 * Use **GetType** to determine what type of data is stored
 * Contains a pointer to the value in memory, not actual data
+
+## Converting to Another Data Type
+
+* Widening conversion
+	* New data type can store all of the values of the original data type
+	* Compiler will make the conversion for you
+* Narrowing conversion
+	* New data type **cannot** store all of the values of the original data type
+	* Loss of data could result
+	* Need to make the conversion in code
+* Make your conversions explicitly in code
+	* Code is more readable and understandable
+* Use a cast operator
+	* ```shortValue = (short)(shortValue + byteValue);```
+* **Convert** class includes a conversion method for each data type
+	* ```Convert.ToSingle(longValue);```
+* **Parse** method converts a string to a data type
+	* ```Single.Parse(longValue.ToString());```
+
+## Value Types and Reference Types
+
+* Value type variables directly store their values
+	* Stored in the stack, pool of memory allocated by runtime for value types
+	* Declared in code and runtime allocates proper amount of memory for them
+	* Efficient because space has already been allocated on stack
+* Reference type variable store a reference to their values
+	* Stored in the heap, a pool of memory whose size is dynamic
+	* Value is stored in the stack, but variable stores a reference to value
+	* Reference is used to find value each time variable is accessed in code
+	* Less efficient than value types
+* Boxing
+	* A value type is converted to a reference type
+	* .NET Framework copies the value to the heap and returns a reference to the value
+* Unboxing
+	* A reference type is converted to a value type
+	* .NET Framework uses the reference to copy the value back into a value type
+
+## Constants
+
+* Declared like variables
+* Value cannot be changed in code
+
+## Enumerations
+
+* Collection of related constants
+* Has a name and a numeric data type
+* Has a number of fields, each with a name and a value
+
+## Structs
+
+* Structs are user defined data types
+* Similar to enumerations in that they are a collection of values
+* Can contain any data type
+
+## Operators
+
+* Perform an action on one or more values and return the result of the operation
+	* Arithmetic operators
+	* String operators
+	* Assignment operators
+	* Comparison operators
+	* Logical operators
+	* Type operators
+
+## Arithmetic Operators
+
+* Perform basic arithmetic on one or more variables
+	* ```+``` adds two numbers or converst a negative number into a positive number
+	* ```-``` subtracts two numbers or converts a positive number into a negative number
+	* ```*``` multiplies two numbers
+	* ```/``` divides two numbers
+	* ```%``` divides two numbers and returns only the remainder of the result
+	* ```++``` increments a number by 1
+	* ```--``` decrements a number by 1
+
+## String Operators
+
+* ```+``` operator concatenates, or adds, two strings together to produce a new string
+
+## Assignment Operators
+
+* Perform similar operations as arithmetic operators
+	* ```+=``` adds two numbers or converts a negative number into a positive number
+	* ```-=``` subtracts two numbers or converts a positive number into a negative number
+	* ```*=``` multiplies two numbers
+	* ```/=``` divides two numbers
+	* ```%=``` divides two numbers and returns only the remainder of the result
+
+## Comparison Operators
+
+* Used to compare two values
+	* ```==``` returns true if two values are equal
+	* ```!=``` returns true if two values are not equal
+	* ```>``` returns true if the first value is greater than the second
+	* ```<``` returns true if the first value is less than the second
+	* ```>=``` returns true if the first value is greater than or equal to the second
+	* ```<=``` returns true if the first value is less than or equal to the second
+
+## Logical Operators
+
+* Used to compare two expressions
+	* ```A & B``` returns true if both A and B are true
+	* ```A | B``` returns true if either A or B is true
+	* ```! A``` returns true if A is not true
+	* ```A ^ B``` returns true if either A or B is true but not both of them are true
+	* ```A && B``` returns true if both A and B are true. Does not evaluate B if A is not true
+	* ```A || B``` returns true if either A or B is true. Does not evaluate B is A is true
+
+## Type Operators
+
+* Test whether an object is of a particular data type
+
+```cs
+object object1;
+
+object1 = 7;
+if (object1 is int) {
+	Console.WriteLine("object1 = 7 and is type Integer");
+}
+```
+
